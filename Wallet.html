@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallet - P2P Crypto Trading</title>
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .wallet-container {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+    .balance-card {
+      background: linear-gradient(135deg, #1565C0 0%, #1E88E5 60%, #64B5F6 100%);
+      color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(30,136,229,0.10);
+      padding: 2rem 1.2rem 1.2rem 1.2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .balance-title {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+    }
+    .balance-total {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .balance-details {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1rem;
+    }
+    .balance-item {
+      text-align: center;
+    }
+    .balance-label {
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+    .balance-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .wallet-actions {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 2rem;
+    }
+    .wallet-action {
+      background: #fff;
+      color: #1E88E5;
+      border-radius: 8px;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(30,136,229,0.08);
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .wallet-action:hover {
+      background: #e3f2fd;
+    }
+    .transactions-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #1E88E5;
+      margin-bottom: 1rem;
+    }
+    .transaction-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .transaction-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(30,136,229,0.06);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+    }
+    .transaction-type.deposit {
+      color: #4CAF50;
+      font-weight: bold;
+    }
+    .transaction-type.withdraw {
+      color: #F44336;
+      font-weight: bold;
+    }
+    .transaction-amount {
+      font-weight: bold;
+    }
+    .transaction-date {
+      color: #757575;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wallet-container">
+    <div class="balance-card">
+      <div class="balance-title">Total Balance</div>
+      <div class="balance-total">$2,500.50</div>
+      <div class="balance-details">
+        <div class="balance-item">
+          <div class="balance-label">Available</div>
+          <div class="balance-value">$2,350.50</div>
+        </div>
+        <div class="balance-item">
+          <div class="balance-label">Locked</div>
+          <div class="balance-value">$150.00</div>
+        </div>
+      </div>
+    </div>
+    <div class="wallet-actions">
+      <a href="#" class="wallet-action">Deposit</a>
+      <a href="#" class="wallet-action">Withdraw</a>
+      <a href="#" class="wallet-action">History</a>
+    </div>
+    <div class="transactions-title">Recent Transactions</div>
+    <div class="transaction-list">
+      <div class="transaction-item">
+        <span class="transaction-type deposit">Deposit</span>
+        <span class="transaction-amount">+ $500.00</span>
+        <span class="transaction-date">2024-07-20</span>
+      </div>
+      <div class="transaction-item">
+        <span class="transaction-type withdraw">Withdraw</span>
+        <span class="transaction-amount">- $100.00</span>
+        <span class="transaction-date">2024-07-18</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

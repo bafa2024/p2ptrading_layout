@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verification - P2P Crypto Trading</title>
+  <style>
+    :root {
+      --primary: #1E88E5;
+      --primary-dark: #1565C0;
+      --background: #f5f5f5;
+      --card: #fff;
+      --text: #212121;
+      --text-secondary: #757575;
+      --input-bg: #fafbfc;
+      --border: #e0e0e0;
+      --btn-text: #fff;
+    }
+    body.dark-mode {
+      --primary: #90caf9;
+      --primary-dark: #1565C0;
+      --background: #181a20;
+      --card: #23272f;
+      --text: #f5f5f5;
+      --text-secondary: #b0b0b0;
+      --input-bg: #23272f;
+      --border: #333a45;
+      --btn-text: #181a20;
+    }
+    body {
+      background: var(--background);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: background 0.3s;
+    }
+    .mode-toggle {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--card);
+      color: var(--primary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      z-index: 10;
+    }
+    .verify-container {
+      background: var(--card);
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(30,136,229,0.08);
+      width: 100%;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+      align-items: center;
+    }
+    .verify-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .verify-desc {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .verify-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--primary);
+      color: var(--btn-text);
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-bottom: 1rem;
+    }
+    .verify-btn:hover {
+      background: var(--primary-dark);
+    }
+    .verify-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+    .verify-link:hover {
+      text-decoration: underline;
+    }
+    .verify-message {
+      color: var(--primary);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+    .verify-message.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <button class="mode-toggle" onclick="toggleMode()">🌙 Dark Mode</button>
+  <div class="verify-container">
+    <div class="verify-title">Verify Your Email</div>
+    <div class="verify-desc">A verification link has been sent to your email. Please check your inbox and click the link to verify your account.</div>
+    <button class="verify-btn" onclick="showMessage()">Resend Email</button>
+    <div class="verify-message" id="verify-message">Verification email resent!</div>
+    <a class="verify-link" href="#">Back to Login</a>
+  </div>
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const btn = document.querySelector('.mode-toggle');
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        btn.textContent = '☀️ Light Mode';
+      } else {
+        btn.textContent = '🌙 Dark Mode';
+      }
+    }
+    function showMessage() {
+      document.getElementById('verify-message').classList.add('active');
+    }
+  </script>
+</body>
+</html> 

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat List - P2P Crypto Trading</title>
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .chat-list-container {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+    .chat-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #1E88E5;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .chat-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(30,136,229,0.06);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .chat-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #e0e0e0;
+      color: #1E88E5;
+      font-weight: bold;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chat-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .chat-user {
+      font-weight: 600;
+      color: #212121;
+      font-size: 1.1rem;
+    }
+    .chat-message {
+      color: #757575;
+      font-size: 0.98rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 180px;
+    }
+    .chat-time {
+      color: #bdbdbd;
+      font-size: 0.95rem;
+      margin-left: 0.5rem;
+    }
+    .chat-unread {
+      background: #F44336;
+      color: #fff;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: bold;
+      position: absolute;
+      right: 16px;
+      top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-list-container">
+    <div class="chat-title">Chats</div>
+    <div class="chat-card">
+      <div class="chat-avatar">CT</div>
+      <div class="chat-info">
+        <div class="chat-user">CryptoTrader</div>
+        <div class="chat-message">Trade started. Please make the payment within 30 minutes.</div>
+      </div>
+      <div class="chat-time">10:30</div>
+      <div class="chat-unread">2</div>
+    </div>
+    <div class="chat-card">
+      <div class="chat-avatar">BM</div>
+      <div class="chat-info">
+        <div class="chat-user">BitMaster</div>
+        <div class="chat-message">Funds released. Thank you!</div>
+      </div>
+      <div class="chat-time">09:15</div>
+    </div>
+  </div>
+</body>
+</html> 

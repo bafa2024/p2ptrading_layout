@@ -1,0 +1,44 @@
+<svg width="420" height="1100" viewBox="0 0 420 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="420" height="1100" fill="#f5f5f5"/>
+  <rect x="20" y="30" width="380" height="90" rx="16" fill="url(#gold-gradient)"/>
+  <defs>
+    <linearGradient id="gold-gradient" x1="20" y1="30" x2="400" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD700"/>
+      <stop offset="1" stop-color="#C0C0C0"/>
+    </linearGradient>
+  </defs>
+  <text x="210" y="60" text-anchor="middle" font-size="16" font-family="Segoe UI, Arial, sans-serif" fill="#212121" opacity="0.8">Current Membership</text>
+  <text x="210" y="85" text-anchor="middle" font-size="22" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#212121">Gold</text>
+  <text x="210" y="110" text-anchor="middle" font-size="16" font-family="Segoe UI, Arial, sans-serif" fill="#757575">$29.99/month</text>
+  <text x="210" y="130" text-anchor="middle" font-size="14" font-family="Segoe UI, Arial, sans-serif" fill="#757575">Expires: 2024-12-31</text>
+  <text x="30" y="170" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#1E88E5">Available Plans</text>
+  <rect x="20" y="190" width="380" height="90" rx="12" fill="#fff"/>
+  <text x="40" y="220" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#212121">Basic</text>
+  <text x="40" y="240" font-size="14" font-family="Segoe UI, Arial, sans-serif" fill="#757575">Free</text>
+  <text x="40" y="260" font-size="13" font-family="Segoe UI, Arial, sans-serif" fill="#212121">Standard trading features, $1,000 daily limit, 1% trading fee, Email support</text>
+  <rect x="320" y="210" width="80" height="32" rx="8" fill="#1E88E5"/>
+  <text x="360" y="232" text-anchor="middle" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#fff">Downgrade</text>
+  <rect x="20" y="290" width="380" height="90" rx="12" fill="#fff"/>
+  <text x="40" y="320" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#212121">Silver</text>
+  <text x="40" y="340" font-size="14" font-family="Segoe UI, Arial, sans-serif" fill="#757575">$9.99/month</text>
+  <text x="40" y="360" font-size="13" font-family="Segoe UI, Arial, sans-serif" fill="#212121">$5,000 daily limit, 0.9% trading fee, Priority support, Advanced analytics</text>
+  <rect x="320" y="310" width="80" height="32" rx="8" fill="#1E88E5"/>
+  <text x="360" y="332" text-anchor="middle" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#fff">Upgrade</text>
+  <rect x="20" y="390" width="380" height="90" rx="12" fill="#fff"/>
+  <text x="40" y="420" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#212121">Gold</text>
+  <text x="40" y="440" font-size="14" font-family="Segoe UI, Arial, sans-serif" fill="#757575">$29.99/month</text>
+  <text x="40" y="460" font-size="13" font-family="Segoe UI, Arial, sans-serif" fill="#212121">$15,000 daily limit, 0.75% trading fee, Premium features, Dedicated support</text>
+  <rect x="320" y="410" width="80" height="32" rx="8" fill="#1E88E5"/>
+  <text x="360" y="432" text-anchor="middle" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#fff">Current</text>
+  <rect x="20" y="490" width="380" height="90" rx="12" fill="#fff"/>
+  <text x="40" y="520" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#212121">Platinum</text>
+  <text x="40" y="540" font-size="14" font-family="Segoe UI, Arial, sans-serif" fill="#757575">$99.99/month</text>
+  <text x="40" y="560" font-size="13" font-family="Segoe UI, Arial, sans-serif" fill="#212121">Unlimited daily trading, 0.5% trading fee, All premium features, VIP support</text>
+  <rect x="320" y="510" width="80" height="32" rx="8" fill="#1E88E5"/>
+  <text x="360" y="532" text-anchor="middle" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#fff">Upgrade</text>
+  <rect x="20" y="600" width="380" height="120" rx="12" fill="#fff"/>
+  <text x="40" y="630" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#1E88E5">Why Upgrade?</text>
+  <text x="60" y="660" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#212121">💸 Lower Fees: Save up to 50% on trading fees</text>
+  <text x="60" y="690" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#212121">⚡ Higher Limits: Unlimited trading with Platinum</text>
+  <text x="60" y="720" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#212121">🎧 Priority Support: Faster response times</text>
+</svg> 

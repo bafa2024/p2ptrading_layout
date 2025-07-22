@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Banner - P2P Crypto Trading</title>
+  <style>
+    :root {
+      --primary: #1E88E5;
+      --success: #43a047;
+      --error: #e53935;
+      --background: #f5f5f5;
+      --card: #fff;
+      --text: #212121;
+      --banner-bg: #e3f2fd;
+      --banner-text: #1565C0;
+    }
+    body.dark-mode {
+      --primary: #90caf9;
+      --success: #81c784;
+      --error: #ff6f60;
+      --background: #181a20;
+      --card: #23272f;
+      --text: #f5f5f5;
+      --banner-bg: #23272f;
+      --banner-text: #90caf9;
+    }
+    body {
+      background: var(--background);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      transition: background 0.3s;
+    }
+    .mode-toggle {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--card);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      z-index: 1001;
+    }
+    .banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      background: var(--banner-bg);
+      color: var(--banner-text);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(30,136,229,0.08);
+      transition: top 0.3s, opacity 0.3s;
+      opacity: 1;
+    }
+    .banner.hide {
+      top: -60px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .banner-icon {
+      font-size: 1.5rem;
+    }
+    .banner-message {
+      flex: 1;
+    }
+    .banner-close {
+      background: none;
+      border: none;
+      color: var(--banner-text);
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-left: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <button class="mode-toggle" onclick="toggleMode()">🌙 Dark Mode</button>
+  <div class="banner" id="banner">
+    <span class="banner-icon">ℹ️</span>
+    <span class="banner-message">This is an info banner message.</span>
+    <button class="banner-close" onclick="closeBanner()">&times;</button>
+  </div>
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const btn = document.querySelector('.mode-toggle');
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        btn.textContent = '☀️ Light Mode';
+      } else {
+        btn.textContent = '🌙 Dark Mode';
+      }
+    }
+    function closeBanner() {
+      document.getElementById('banner').classList.add('hide');
+    }
+    // Auto-hide after 5s
+    setTimeout(() => closeBanner(), 5000);
+  </script>
+</body>
+</html> 

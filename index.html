@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Slider Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
+    .slider-container { max-width: 440px; margin: 40px auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 24px; text-align: center; }
+    .slider-controls { margin-top: 16px; }
+    button { padding: 8px 20px; margin: 0 10px; border: none; border-radius: 6px; background: #1E88E5; color: #fff; font-size: 16px; cursor: pointer; transition: background 0.2s; }
+    button:disabled { background: #b0bec5; cursor: not-allowed; }
+    .svg-title { margin: 18px 0 8px; font-weight: bold; font-size: 18px; color: #1E88E5; }
+    .svg-viewer { min-height: 620px; display: flex; align-items: center; justify-content: center; }
+    img { max-width: 100%; max-height: 600px; border-radius: 8px; background: #fafbfc; border: 1px solid #e0e0e0; }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <div class="svg-title" id="svgTitle"></div>
+    <div class="svg-viewer">
+      <img id="svgImage" src="" alt="SVG Preview" />
+    </div>
+    <div class="slider-controls">
+      <button id="prevBtn">Previous</button>
+      <button id="nextBtn">Next</button>
+    </div>
+  </div>
+  <script>
+    // List of SVG files in the current directory
+    const svgFiles = [
+      'ChatList.svg',
+      'CreateAd.svg',
+      'Deposit.svg',
+      'Dispute.svg',
+      'Home.svg',
+      'KYC.svg',
+      'Membership.svg',
+      'Profile.svg',
+      'Referral.svg',
+      'ROI.svg',
+      'Settings.svg',
+      'Splash.svg',
+      'TradeChat.svg',
+      'TradeDetails.svg',
+      'TradeList.svg',
+      'TransactionHistory.svg',
+      'Wallet.svg',
+      'Withdraw.svg'
+    ];
+    let currentIndex = 0;
+    const svgImage = document.getElementById('svgImage');
+    const svgTitle = document.getElementById('svgTitle');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function updateSlider() {
+      svgImage.src = svgFiles[currentIndex];
+      svgTitle.textContent = svgFiles[currentIndex];
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === svgFiles.length - 1;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
+    });
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < svgFiles.length - 1) {
+        currentIndex++;
+        updateSlider();
+      }
+    });
+    // Initialize
+    updateSlider();
+  </script>
+</body>
+</html> 

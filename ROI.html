@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROI - P2P Crypto Trading</title>
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .roi-container {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+    .roi-summary {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(30,136,229,0.08);
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .roi-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #1E88E5;
+      margin-bottom: 0.5rem;
+    }
+    .roi-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #4CAF50;
+      margin-bottom: 0.2rem;
+    }
+    .roi-label {
+      color: #757575;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .investment-list {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(30,136,229,0.06);
+      padding: 1.2rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .investment-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .investment-item:last-child {
+      border-bottom: none;
+    }
+    .investment-amount {
+      font-weight: bold;
+      color: #1E88E5;
+    }
+    .investment-date {
+      color: #757575;
+      font-size: 0.95rem;
+    }
+    .investment-status {
+      margin-left: auto;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      padding: 0.2rem 0.7rem;
+      background: #e0e0e0;
+      color: #212121;
+    }
+    .investment-status.active {
+      background: #4CAF50;
+      color: #fff;
+    }
+    .investment-status.completed {
+      background: #1E88E5;
+      color: #fff;
+    }
+    .add-btn {
+      width: 100%;
+      padding: 0.8rem;
+      background: #1E88E5;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .add-btn:hover {
+      background: #1565C0;
+    }
+  </style>
+</head>
+<body>
+  <div class="roi-container">
+    <div class="roi-summary">
+      <div class="roi-title">Total Invested</div>
+      <div class="roi-value">$5,000.00</div>
+      <div class="roi-label">Total ROI: $1,200.00</div>
+    </div>
+    <div class="investment-list">
+      <div class="investment-item">
+        <span class="investment-amount">$2,000.00</span>
+        <span class="investment-date">2024-06-01</span>
+        <span class="investment-status active">Active</span>
+      </div>
+      <div class="investment-item">
+        <span class="investment-amount">$3,000.00</span>
+        <span class="investment-date">2024-05-01</span>
+        <span class="investment-status completed">Completed</span>
+      </div>
+    </div>
+    <button class="add-btn">Add Investment</button>
+  </div>
+</body>
+</html> 

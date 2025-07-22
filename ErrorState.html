@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error State - P2P Crypto Trading</title>
+  <style>
+    :root {
+      --primary: #1E88E5;
+      --primary-dark: #1565C0;
+      --background: #f5f5f5;
+      --card: #fff;
+      --text: #212121;
+      --text-secondary: #757575;
+      --input-bg: #fafbfc;
+      --border: #e0e0e0;
+      --btn-text: #fff;
+      --error: #e53935;
+    }
+    body.dark-mode {
+      --primary: #90caf9;
+      --primary-dark: #1565C0;
+      --background: #181a20;
+      --card: #23272f;
+      --text: #f5f5f5;
+      --text-secondary: #b0b0b0;
+      --input-bg: #23272f;
+      --border: #333a45;
+      --btn-text: #181a20;
+      --error: #ff6f60;
+    }
+    body {
+      background: var(--background);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: background 0.3s;
+    }
+    .mode-toggle {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--card);
+      color: var(--primary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      z-index: 10;
+    }
+    .error-container {
+      background: var(--card);
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(229,57,53,0.08);
+      width: 100%;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    .error-icon {
+      font-size: 3rem;
+      color: var(--error);
+      margin-bottom: 0.5rem;
+    }
+    .error-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--error);
+      text-align: center;
+    }
+    .error-desc {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .error-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--primary);
+      color: var(--btn-text);
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .error-btn:hover {
+      background: var(--primary-dark);
+    }
+  </style>
+</head>
+<body>
+  <button class="mode-toggle" onclick="toggleMode()">🌙 Dark Mode</button>
+  <div class="error-container">
+    <div class="error-icon">&#9888;&#65039;</div>
+    <div class="error-title">Network Error</div>
+    <div class="error-desc">We couldn't connect to the server. Please check your internet connection and try again.</div>
+    <button class="error-btn" onclick="retry()">Retry</button>
+  </div>
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const btn = document.querySelector('.mode-toggle');
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        btn.textContent = '☀️ Light Mode';
+      } else {
+        btn.textContent = '🌙 Dark Mode';
+      }
+    }
+    function retry() {
+      alert('Retrying connection...');
+    }
+  </script>
+</body>
+</html> 

@@ -1,0 +1,33 @@
+<svg width="420" height="900" viewBox="0 0 420 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="420" height="900" fill="#f5f5f5"/>
+  <rect x="20" y="20" width="380" height="90" rx="16" fill="#fff" stroke="#e0e0e0"/>
+  <circle cx="60" cy="65" r="30" fill="#e0e0e0"/>
+  <text x="60" y="72" text-anchor="middle" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#1E88E5">CT</text>
+  <text x="110" y="55" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#212121">CryptoTrader</text>
+  <text x="110" y="75" font-size="14" font-family="Segoe UI, Arial, sans-serif" fill="#757575">⭐ 4.8   523 trades</text>
+  <text x="110" y="95" font-size="14" font-family="Segoe UI, Arial, sans-serif" fill="#757575">⏱ 5 mins   ✔ 98.5%</text>
+  <rect x="20" y="120" width="380" height="120" rx="16" fill="#fff" stroke="#e0e0e0"/>
+  <text x="40" y="150" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#1E88E5">Trade Information</text>
+  <text x="40" y="175" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#757575">Type:</text>
+  <rect x="100" y="160" width="60" height="28" rx="12" fill="#F44336"/>
+  <text x="130" y="180" text-anchor="middle" font-size="14" font-family="Segoe UI, Arial, sans-serif" font-weight="600" fill="#fff">Sell</text>
+  <text x="40" y="200" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#757575">Price: <tspan fill="#212121" font-weight="600">1.02 USDT</tspan></text>
+  <text x="40" y="225" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#757575">Limits: <tspan fill="#212121" font-weight="600">100 - 5000</tspan></text>
+  <text x="40" y="250" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#757575">Available: <tspan fill="#212121" font-weight="600">3500 USDT</tspan></text>
+  <text x="40" y="275" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#757575">Payment:</text>
+  <rect x="120" y="262" width="90" height="22" rx="8" fill="#e0e0e0"/>
+  <text x="165" y="278" text-anchor="middle" font-size="13" font-family="Segoe UI, Arial, sans-serif" fill="#1E88E5">Bank Transfer</text>
+  <rect x="220" y="262" width="70" height="22" rx="8" fill="#e0e0e0"/>
+  <text x="255" y="278" text-anchor="middle" font-size="13" font-family="Segoe UI, Arial, sans-serif" fill="#1E88E5">PayPal</text>
+  <rect x="20" y="260" width="380" height="80" rx="16" fill="#fff" stroke="#e0e0e0"/>
+  <text x="40" y="290" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#1E88E5">Terms & Conditions</text>
+  <text x="40" y="320" font-size="14" font-family="Segoe UI, Arial, sans-serif" fill="#757575">Fast payment required. Release within 15 minutes after payment confirmation. Only serious buyers please.</text>
+  <rect x="20" y="350" width="380" height="120" rx="16" fill="#fff" stroke="#e0e0e0"/>
+  <text x="40" y="380" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#1E88E5">Buy USDT</text>
+  <rect x="40" y="400" width="340" height="40" rx="8" fill="#fafbfc" stroke="#e0e0e0"/>
+  <text x="50" y="425" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#757575">Amount (USDT)</text>
+  <text x="40" y="450" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#757575">You will pay:</text>
+  <text x="200" y="450" text-anchor="middle" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#1E88E5">$0.00</text>
+  <rect x="40" y="470" width="340" height="40" rx="8" fill="#1E88E5"/>
+  <text x="210" y="495" text-anchor="middle" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="600" fill="#fff">Buy Now</text>
+</svg> 

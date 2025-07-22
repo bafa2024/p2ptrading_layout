@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - P2P Crypto Trading</title>
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .profile-container {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+    .profile-header {
+      background: linear-gradient(135deg, #1565C0 0%, #1E88E5 60%, #64B5F6 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 2rem 1.2rem 1.2rem 1.2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #fff;
+      color: #1E88E5;
+      font-size: 2.2rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem auto;
+    }
+    .profile-name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.2rem;
+    }
+    .profile-email {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+    .profile-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+    .profile-stat {
+      text-align: center;
+    }
+    .profile-stat-value {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .profile-stat-label {
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+    .referral-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(30,136,229,0.06);
+      padding: 1.2rem 1rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .referral-title {
+      color: #1E88E5;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .referral-code {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #212121;
+      background: #e3f2fd;
+      border-radius: 8px;
+      padding: 0.3rem 1.2rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    .referral-text {
+      color: #757575;
+      font-size: 0.95rem;
+    }
+    .menu-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(30,136,229,0.06);
+      padding: 1.2rem 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #e0e0e0;
+      color: #1E88E5;
+      font-weight: 500;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+    .menu-item:hover {
+      background: #e3f2fd;
+    }
+    .logout-btn {
+      width: 100%;
+      padding: 0.8rem;
+      background: #F44336;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 1rem;
+    }
+    .logout-btn:hover {
+      background: #b71c1c;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-header">
+      <div class="profile-avatar">U</div>
+      <div class="profile-name">User Name</div>
+      <div class="profile-email">user@email.com</div>
+      <div class="profile-stats">
+        <div class="profile-stat">
+          <div class="profile-stat-value">523</div>
+          <div class="profile-stat-label">Trades</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-value">4.8</div>
+          <div class="profile-stat-label">Rating</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-value">GOLD</div>
+          <div class="profile-stat-label">Tier</div>
+        </div>
+      </div>
+    </div>
+    <div class="referral-card">
+      <div class="referral-title">Your Referral Code</div>
+      <div class="referral-code">ABC123</div>
+      <div class="referral-text">Share this code and earn 0.1% on all trades</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-item">Edit Profile</div>
+      <div class="menu-item">Settings</div>
+      <div class="menu-item">Membership</div>
+      <div class="menu-item">Referrals</div>
+      <div class="menu-item">ROI Investment</div>
+      <div class="menu-item">Security</div>
+      <div class="menu-item">Support</div>
+      <div class="menu-item">Terms & Privacy</div>
+    </div>
+    <button class="logout-btn">Logout</button>
+  </div>
+</body>
+</html> 

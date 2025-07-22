@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading State - P2P Crypto Trading</title>
+  <style>
+    :root {
+      --primary: #1E88E5;
+      --primary-dark: #1565C0;
+      --background: #f5f5f5;
+      --card: #fff;
+      --text: #212121;
+      --skeleton: #e0e0e0;
+      --skeleton-shine: #f5f5f5;
+    }
+    body.dark-mode {
+      --primary: #90caf9;
+      --primary-dark: #1565C0;
+      --background: #181a20;
+      --card: #23272f;
+      --text: #f5f5f5;
+      --skeleton: #333a45;
+      --skeleton-shine: #23272f;
+    }
+    body {
+      background: var(--background);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: background 0.3s;
+    }
+    .mode-toggle {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--card);
+      color: var(--primary);
+      border: 1px solid var(--skeleton);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      z-index: 10;
+    }
+    .loading-container {
+      background: var(--card);
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(30,136,229,0.08);
+      width: 100%;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 5px solid var(--skeleton);
+      border-top: 5px solid var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .skeleton {
+      width: 100%;
+      height: 18px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--skeleton) 25%, var(--skeleton-shine) 50%, var(--skeleton) 75%);
+      background-size: 200% 100%;
+      animation: skeleton-shine 1.2s infinite linear;
+      margin-bottom: 0.7rem;
+    }
+    @keyframes skeleton-shine {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+</head>
+<body>
+  <button class="mode-toggle" onclick="toggleMode()">🌙 Dark Mode</button>
+  <div class="loading-container">
+    <div class="spinner"></div>
+    <div class="skeleton" style="width: 80%; height: 22px;"></div>
+    <div class="skeleton" style="width: 60%;"></div>
+    <div class="skeleton" style="width: 90%;"></div>
+    <div class="skeleton" style="width: 70%;"></div>
+  </div>
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const btn = document.querySelector('.mode-toggle');
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        btn.textContent = '☀️ Light Mode';
+      } else {
+        btn.textContent = '🌙 Dark Mode';
+      }
+    }
+  </script>
+</body>
+</html> 

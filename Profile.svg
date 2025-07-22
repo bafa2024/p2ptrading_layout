@@ -1,0 +1,34 @@
+<svg width="420" height="900" viewBox="0 0 420 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="profile-bg" x1="0" y1="0" x2="420" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1565C0"/>
+      <stop offset="0.6" stop-color="#1E88E5"/>
+      <stop offset="1" stop-color="#64B5F6"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="900" fill="#f5f5f5"/>
+  <rect x="20" y="30" width="380" height="180" rx="24" fill="url(#profile-bg)"/>
+  <circle cx="210" cy="80" r="40" fill="#fff"/>
+  <text x="210" y="90" text-anchor="middle" font-size="32" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#1E88E5">U</text>
+  <text x="210" y="130" text-anchor="middle" font-size="20" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#fff">User Name</text>
+  <text x="210" y="155" text-anchor="middle" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#fff" opacity="0.9">user@email.com</text>
+  <text x="110" y="180" text-anchor="middle" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#fff">523 Trades</text>
+  <text x="210" y="180" text-anchor="middle" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#fff">4.8 Rating</text>
+  <text x="310" y="180" text-anchor="middle" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#fff">GOLD Tier</text>
+  <rect x="20" y="230" width="380" height="90" rx="16" fill="#fff"/>
+  <text x="210" y="255" text-anchor="middle" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#1E88E5">Your Referral Code</text>
+  <rect x="120" y="270" width="180" height="32" rx="8" fill="#e3f2fd"/>
+  <text x="210" y="292" text-anchor="middle" font-size="20" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#212121">ABC123</text>
+  <text x="210" y="320" text-anchor="middle" font-size="14" font-family="Segoe UI, Arial, sans-serif" fill="#757575">Share this code and earn 0.1% on all trades</text>
+  <rect x="20" y="340" width="380" height="260" rx="16" fill="#fff"/>
+  <text x="60" y="370" font-size="16" font-family="Segoe UI, Arial, sans-serif" fill="#1E88E5">Edit Profile</text>
+  <text x="60" y="400" font-size="16" font-family="Segoe UI, Arial, sans-serif" fill="#1E88E5">Settings</text>
+  <text x="60" y="430" font-size="16" font-family="Segoe UI, Arial, sans-serif" fill="#1E88E5">Membership</text>
+  <text x="60" y="460" font-size="16" font-family="Segoe UI, Arial, sans-serif" fill="#1E88E5">Referrals</text>
+  <text x="60" y="490" font-size="16" font-family="Segoe UI, Arial, sans-serif" fill="#1E88E5">ROI Investment</text>
+  <text x="60" y="520" font-size="16" font-family="Segoe UI, Arial, sans-serif" fill="#1E88E5">Security</text>
+  <text x="60" y="550" font-size="16" font-family="Segoe UI, Arial, sans-serif" fill="#1E88E5">Support</text>
+  <text x="60" y="580" font-size="16" font-family="Segoe UI, Arial, sans-serif" fill="#1E88E5">Terms & Privacy</text>
+  <rect x="20" y="620" width="380" height="48" rx="8" fill="#F44336"/>
+  <text x="210" y="650" text-anchor="middle" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="600" fill="#fff">Logout</text>
+</svg> 

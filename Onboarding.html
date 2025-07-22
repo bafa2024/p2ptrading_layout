@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding - P2P Crypto Trading</title>
+  <style>
+    :root {
+      --primary: #1E88E5;
+      --primary-dark: #1565C0;
+      --background: #f5f5f5;
+      --card: #fff;
+      --text: #212121;
+      --text-secondary: #757575;
+      --input-bg: #fafbfc;
+      --border: #e0e0e0;
+      --btn-text: #fff;
+    }
+    body.dark-mode {
+      --primary: #90caf9;
+      --primary-dark: #1565C0;
+      --background: #181a20;
+      --card: #23272f;
+      --text: #f5f5f5;
+      --text-secondary: #b0b0b0;
+      --input-bg: #23272f;
+      --border: #333a45;
+      --btn-text: #181a20;
+    }
+    body {
+      background: var(--background);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+    .mode-toggle {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--card);
+      color: var(--primary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      z-index: 10;
+    }
+    .onboarding-container {
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(30,136,229,0.08);
+      max-width: 370px;
+      width: 100%;
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    .onboarding-step {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.2rem;
+    }
+    .onboarding-step.active {
+      display: flex;
+    }
+    .onboarding-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .onboarding-desc {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .onboarding-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+    }
+    .onboarding-feature {
+      background: var(--input-bg);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 0.7rem 1rem;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(30,136,229,0.06);
+    }
+    .onboarding-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--primary);
+      color: var(--btn-text);
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 1rem;
+    }
+    .onboarding-btn:hover {
+      background: var(--primary-dark);
+    }
+    .onboarding-progress {
+      display: flex;
+      gap: 0.5rem;
+      margin: 1.2rem 0 0.5rem 0;
+      justify-content: center;
+    }
+    .onboarding-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: background 0.2s;
+    }
+    .onboarding-dot.active {
+      background: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <button class="mode-toggle" onclick="toggleMode()">🌙 Dark Mode</button>
+  <div class="onboarding-container">
+    <div class="onboarding-step active" id="step-1">
+      <div class="onboarding-title">Welcome!</div>
+      <div class="onboarding-desc">Start your secure, fast, and reliable P2P crypto trading journey.</div>
+      <button class="onboarding-btn" onclick="nextStep()">Next</button>
+    </div>
+    <div class="onboarding-step" id="step-2">
+      <div class="onboarding-title">Features</div>
+      <div class="onboarding-features">
+        <div class="onboarding-feature">🔒 Secure Escrow Trading</div>
+        <div class="onboarding-feature">💬 Real-time Chat</div>
+        <div class="onboarding-feature">🌍 Global Payment Methods</div>
+      </div>
+      <button class="onboarding-btn" onclick="nextStep()">Next</button>
+    </div>
+    <div class="onboarding-step" id="step-3">
+      <div class="onboarding-title">Get Started</div>
+      <div class="onboarding-desc">Create your account and start trading instantly.</div>
+      <button class="onboarding-btn" onclick="finishOnboarding()">Get Started</button>
+    </div>
+    <div class="onboarding-progress">
+      <div class="onboarding-dot active" id="dot-1"></div>
+      <div class="onboarding-dot" id="dot-2"></div>
+      <div class="onboarding-dot" id="dot-3"></div>
+    </div>
+  </div>
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const btn = document.querySelector('.mode-toggle');
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        btn.textContent = '☀️ Light Mode';
+      } else {
+        btn.textContent = '🌙 Dark Mode';
+      }
+    }
+    let currentStep = 1;
+    function nextStep() {
+      document.getElementById('step-' + currentStep).classList.remove('active');
+      document.getElementById('dot-' + currentStep).classList.remove('active');
+      currentStep++;
+      document.getElementById('step-' + currentStep).classList.add('active');
+      document.getElementById('dot-' + currentStep).classList.add('active');
+    }
+    function finishOnboarding() {
+      alert('Onboarding complete! Redirect to Register/Login.');
+    }
+  </script>
+</body>
+</html> 

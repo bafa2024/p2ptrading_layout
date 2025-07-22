@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Component Library - P2P Crypto Trading</title>
+  <style>
+    :root {
+      --primary: #1E88E5;
+      --primary-dark: #1565C0;
+      --background: #f5f5f5;
+      --card: #fff;
+      --text: #212121;
+      --text-secondary: #757575;
+      --input-bg: #fafbfc;
+      --border: #e0e0e0;
+      --btn-text: #fff;
+      --success: #43a047;
+      --error: #e53935;
+      --badge-bg: #e3f2fd;
+      --chip-bg: #e0e0e0;
+      --avatar-bg: #90caf9;
+      --divider: #e0e0e0;
+      --modal-bg: rgba(30, 136, 229, 0.10);
+      --focus: #ffeb3b;
+      --high-contrast-bg: #000;
+      --high-contrast-text: #fff;
+      --high-contrast-primary: #ffeb3b;
+    }
+    body.dark-mode {
+      --primary: #90caf9;
+      --primary-dark: #1565C0;
+      --background: #181a20;
+      --card: #23272f;
+      --text: #f5f5f5;
+      --text-secondary: #b0b0b0;
+      --input-bg: #23272f;
+      --border: #333a45;
+      --btn-text: #181a20;
+      --badge-bg: #23272f;
+      --chip-bg: #333a45;
+      --avatar-bg: #1565C0;
+      --divider: #333a45;
+      --modal-bg: rgba(30, 136, 229, 0.25);
+      --focus: #ffeb3b;
+      --high-contrast-bg: #000;
+      --high-contrast-text: #fff;
+      --high-contrast-primary: #ffeb3b;
+    }
+    body.accessibility-mode {
+      --background: var(--high-contrast-bg);
+      --card: var(--high-contrast-bg);
+      --text: var(--high-contrast-text);
+      --text-secondary: var(--high-contrast-primary);
+      --primary: var(--high-contrast-primary);
+      --btn-text: var(--high-contrast-bg);
+      --border: var(--high-contrast-primary);
+      --focus: #ffeb3b;
+    }
+    body {
+      background: var(--background);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    .toolbar {
+      display: flex;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      background: var(--background);
+      padding: 1rem;
+      z-index: 10;
+      justify-content: flex-end;
+    }
+    .toggle-btn {
+      background: var(--card);
+      color: var(--primary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      outline: none;
+    }
+    .toggle-btn:focus {
+      outline: 3px solid var(--focus);
+    }
+    .component-section {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(30,136,229,0.08);
+      margin: 2rem auto;
+      max-width: 600px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      color: var(--text);
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    /* Button */
+    .ui-btn {
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: var(--btn-text);
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      outline: none;
+    }
+    .ui-btn:focus {
+      outline: 3px solid var(--focus);
+    }
+    /* Card */
+    .ui-card {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(30,136,229,0.08);
+      padding: 1.5rem;
+      color: var(--text);
+      border: 1px solid var(--border);
+      margin-bottom: 0.5rem;
+    }
+    /* Modal */
+    .ui-modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--modal-bg);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .ui-modal {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(30,136,229,0.12);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      max-width: 340px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--text);
+      position: relative;
+      gap: 1rem;
+    }
+    .ui-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+    /* Toast */
+    .ui-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 2.5rem;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: var(--btn-text);
+      min-width: 220px;
+      max-width: 90vw;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(30,136,229,0.08);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1rem;
+      z-index: 100;
+      opacity: 1;
+      transition: opacity 0.3s, bottom 0.3s;
+    }
+    .ui-toast.hide {
+      opacity: 0;
+      bottom: 0.5rem;
+      pointer-events: none;
+    }
+    /* Badge */
+    .ui-badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--primary);
+      border-radius: 12px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    /* Chip */
+    .ui-chip {
+      display: inline-block;
+      background: var(--chip-bg);
+      color: var(--text);
+      border-radius: 16px;
+      padding: 0.3rem 1rem;
+      font-size: 1rem;
+      margin-right: 0.5rem;
+    }
+    /* Input */
+    .ui-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      background: var(--input-bg);
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      transition: border 0.2s, background 0.3s, color 0.3s;
+      outline: none;
+    }
+    .ui-input:focus {
+      border-color: var(--primary);
+      outline: 3px solid var(--focus);
+    }
+    /* Avatar */
+    .ui-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--avatar-bg);
+      color: var(--btn-text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    /* Header */
+    .ui-header {
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    /* ProgressBar */
+    .ui-progress {
+      width: 100%;
+      height: 12px;
+      background: var(--divider);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+    .ui-progress-bar {
+      height: 100%;
+      background: var(--primary);
+      width: 60%;
+      border-radius: 8px 0 0 8px;
+      transition: width 0.4s;
+    }
+    /* Divider */
+    .ui-divider {
+      width: 100%;
+      height: 2px;
+      background: var(--divider);
+      margin: 1.2rem 0;
+      border-radius: 2px;
+    }
+    /* BottomSheet */
+    .ui-bottomsheet {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      background: var(--card);
+      border-radius: 16px 16px 0 0;
+      box-shadow: 0 -4px 24px rgba(30,136,229,0.08);
+      padding: 2rem 1.5rem;
+      max-width: 500px;
+      margin: 0 auto;
+      z-index: 1002;
+      display: none;
+    }
+    .ui-bottomsheet.active {
+      display: block;
+    }
+    /* LoadingSpinner */
+    .ui-spinner {
+      width: 40px;
+      height: 40px;
+      border: 5px solid var(--divider);
+      border-top: 5px solid var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    /* EmptyState */
+    .ui-emptystate {
+      text-align: center;
+      color: var(--text-secondary);
+      padding: 1.5rem 0;
+    }
+    /* ErrorBoundary */
+    .ui-error {
+      background: var(--error);
+      color: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    /* Accessibility focus outline for all interactive elements */
+    button:focus, input:focus, .ui-btn:focus, .toggle-btn:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+    /* Larger text for accessibility mode */
+    body.accessibility-mode, body.accessibility-mode * {
+      font-size: 1.15em !important;
+    }
+  </style>
+</head>
+<body>
+  <nav class="toolbar" aria-label="UI Kit Toolbar">
+    <button class="toggle-btn" id="darkModeBtn" onclick="toggleDarkMode()" aria-pressed="false">🌙 Dark Mode</button>
+    <button class="toggle-btn" id="accessibilityBtn" onclick="toggleAccessibility()" aria-pressed="false">🦮 Accessibility Mode</button>
+  </nav>
+  <main>
+    <section class="component-section" aria-labelledby="header-title">
+      <div class="section-title" id="header-title">Header</div>
+      <div class="ui-header" role="heading" aria-level="1">P2P Crypto Trading</div>
+    </section>
+    <section class="component-section" aria-labelledby="button-title">
+      <div class="section-title" id="button-title">Button</div>
+      <button class="ui-btn" aria-label="Primary Action Button">Primary Button</button>
+    </section>
+    <section class="component-section" aria-labelledby="card-title">
+      <div class="section-title" id="card-title">Card</div>
+      <div class="ui-card" role="region" aria-label="Card Example">
+        <div class="ui-header" style="font-size:1.1rem;">Card Title</div>
+        <div>Card content goes here. This is a reusable card component.</div>
+      </div>
+    </section>
+    <section class="component-section" aria-labelledby="modal-title">
+      <div class="section-title" id="modal-title">Modal</div>
+      <button class="ui-btn" onclick="openModal()" aria-haspopup="dialog" aria-controls="demo-modal">Open Modal</button>
+      <div class="ui-modal-backdrop" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="modalLabel" style="display:none;">
+        <div class="ui-modal">
+          <button class="ui-modal-close" onclick="closeModal()" aria-label="Close Modal">&times;</button>
+          <div class="ui-header" id="modalLabel" style="font-size:1.1rem;">Modal Title</div>
+          <div>Modal content goes here.</div>
+        </div>
+      </div>
+    </section>
+    <section class="component-section" aria-labelledby="toast-title">
+      <div class="section-title" id="toast-title">Toast</div>
+      <button class="ui-btn" onclick="showToast()" aria-controls="demo-toast">Show Toast</button>
+      <div class="ui-toast" id="demo-toast" role="status" aria-live="polite" style="display:none;">
+        <span>🔔</span>
+        <span>This is a toast message.</span>
+      </div>
+    </section>
+    <section class="component-section" aria-labelledby="badge-title">
+      <div class="section-title" id="badge-title">Badge</div>
+      <span class="ui-badge" role="status" aria-label="New">New</span>
+      <span class="ui-badge" style="background:var(--success);color:#fff;">Verified</span>
+    </section>
+    <section class="component-section" aria-labelledby="chip-title">
+      <div class="section-title" id="chip-title">Chip</div>
+      <span class="ui-chip" tabindex="0" aria-label="Bitcoin">Bitcoin</span>
+      <span class="ui-chip" tabindex="0" aria-label="Ethereum">Ethereum</span>
+    </section>
+    <section class="component-section" aria-labelledby="input-title">
+      <div class="section-title" id="input-title">Input</div>
+      <input class="ui-input" type="text" placeholder="Enter text" aria-label="Sample Input" />
+    </section>
+    <section class="component-section" aria-labelledby="avatar-title">
+      <div class="section-title" id="avatar-title">Avatar</div>
+      <span class="ui-avatar" aria-label="User Avatar">AB</span>
+    </section>
+    <section class="component-section" aria-labelledby="progress-title">
+      <div class="section-title" id="progress-title">ProgressBar</div>
+      <div class="ui-progress" aria-label="Progress Bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+        <div class="ui-progress-bar"></div>
+      </div>
+    </section>
+    <section class="component-section" aria-labelledby="divider-title">
+      <div class="section-title" id="divider-title">Divider</div>
+      <div class="ui-divider" role="separator"></div>
+    </section>
+    <section class="component-section" aria-labelledby="bottomsheet-title">
+      <div class="section-title" id="bottomsheet-title">BottomSheet</div>
+      <button class="ui-btn" onclick="openBottomSheet()" aria-controls="demo-bottomsheet" aria-haspopup="true">Open BottomSheet</button>
+      <div class="ui-bottomsheet" id="demo-bottomsheet" role="dialog" aria-modal="true" aria-labelledby="bottomsheetLabel">
+        <div class="ui-header" id="bottomsheetLabel" style="font-size:1.1rem;">BottomSheet Title</div>
+        <div>BottomSheet content goes here.</div>
+        <button class="ui-btn" onclick="closeBottomSheet()">Close</button>
+      </div>
+    </section>
+    <section class="component-section" aria-labelledby="spinner-title">
+      <div class="section-title" id="spinner-title">LoadingSpinner</div>
+      <div class="ui-spinner" role="status" aria-label="Loading"></div>
+    </section>
+    <section class="component-section" aria-labelledby="emptystate-title">
+      <div class="section-title" id="emptystate-title">EmptyState</div>
+      <div class="ui-emptystate" role="status" aria-label="No Data">No data available.</div>
+    </section>
+    <section class="component-section" aria-labelledby="error-title">
+      <div class="section-title" id="error-title">ErrorBoundary</div>
+      <div class="ui-error" role="alert">Something went wrong. Please try again.</div>
+    </section>
+  </main>
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const btn = document.getElementById('darkModeBtn');
+      body.classList.toggle('dark-mode');
+      btn.setAttribute('aria-pressed', body.classList.contains('dark-mode'));
+      btn.textContent = body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    }
+    function toggleAccessibility() {
+      const body = document.body;
+      const btn = document.getElementById('accessibilityBtn');
+      body.classList.toggle('accessibility-mode');
+      btn.setAttribute('aria-pressed', body.classList.contains('accessibility-mode'));
+      btn.textContent = body.classList.contains('accessibility-mode') ? '🦮 Accessibility On' : '🦮 Accessibility Mode';
+    }
+    // Modal logic
+    function openModal() {
+      document.getElementById('demo-modal').style.display = 'flex';
+      document.getElementById('demo-modal').focus();
+    }
+    function closeModal() {
+      document.getElementById('demo-modal').style.display = 'none';
+    }
+    // Toast logic
+    function showToast() {
+      const toast = document.getElementById('demo-toast');
+      toast.style.display = 'flex';
+      setTimeout(() => { toast.style.display = 'none'; }, 3000);
+    }
+    // BottomSheet logic
+    function openBottomSheet() {
+      document.getElementById('demo-bottomsheet').classList.add('active');
+      document.getElementById('demo-bottomsheet').focus();
+    }
+    function closeBottomSheet() {
+      document.getElementById('demo-bottomsheet').classList.remove('active');
+    }
+  </script>
+</body>
+</html> 

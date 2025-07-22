@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership - P2P Crypto Trading</title>
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .membership-container {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+    .current-tier-card {
+      background: linear-gradient(135deg, #FFD700 0%, #C0C0C0 100%);
+      color: #212121;
+      border-radius: 16px;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .current-tier-label {
+      font-size: 1rem;
+      opacity: 0.8;
+      margin-bottom: 0.3rem;
+    }
+    .current-tier-name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.2rem;
+    }
+    .current-tier-price {
+      font-size: 1.1rem;
+      color: #757575;
+      margin-bottom: 0.2rem;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #1E88E5;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+    .tier-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .tier-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(30,136,229,0.06);
+      padding: 1.2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .tier-name {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.2rem;
+    }
+    .tier-price {
+      font-size: 1rem;
+      color: #757575;
+      margin-bottom: 0.2rem;
+    }
+    .features {
+      margin: 0.5rem 0 0.5rem 0;
+      padding-left: 1rem;
+      color: #212121;
+      font-size: 0.98rem;
+    }
+    .upgrade-btn {
+      margin-top: 0.5rem;
+      background: #1E88E5;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .upgrade-btn:hover {
+      background: #1565C0;
+    }
+    .benefits-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(30,136,229,0.06);
+      padding: 1.2rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .benefits-title {
+      font-weight: bold;
+      color: #1E88E5;
+      margin-bottom: 0.5rem;
+    }
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 0.5rem;
+    }
+    .benefit-title {
+      font-weight: 600;
+      color: #212121;
+    }
+    .benefit-description {
+      color: #757575;
+      font-size: 0.97rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="membership-container">
+    <div class="current-tier-card">
+      <div class="current-tier-label">Current Membership</div>
+      <div class="current-tier-name">Gold</div>
+      <div class="current-tier-price">$29.99/month</div>
+      <div class="current-tier-expiry">Expires: 2024-12-31</div>
+    </div>
+    <div class="section-title">Available Plans</div>
+    <div class="tier-list">
+      <div class="tier-card">
+        <div class="tier-name">Basic</div>
+        <div class="tier-price">Free</div>
+        <ul class="features">
+          <li>Standard trading features</li>
+          <li>$1,000 daily limit</li>
+          <li>1% trading fee</li>
+          <li>Email support</li>
+        </ul>
+        <button class="upgrade-btn">Downgrade</button>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Silver</div>
+        <div class="tier-price">$9.99/month</div>
+        <ul class="features">
+          <li>$5,000 daily limit</li>
+          <li>0.9% trading fee (10% discount)</li>
+          <li>Priority support</li>
+          <li>Advanced analytics</li>
+        </ul>
+        <button class="upgrade-btn">Upgrade</button>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Gold</div>
+        <div class="tier-price">$29.99/month</div>
+        <ul class="features">
+          <li>$15,000 daily limit</li>
+          <li>0.75% trading fee (25% discount)</li>
+          <li>Premium features</li>
+          <li>Dedicated support</li>
+        </ul>
+        <button class="upgrade-btn">Current</button>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Platinum</div>
+        <div class="tier-price">$99.99/month</div>
+        <ul class="features">
+          <li>Unlimited daily trading</li>
+          <li>0.5% trading fee (50% discount)</li>
+          <li>All premium features</li>
+          <li>VIP support</li>
+        </ul>
+        <button class="upgrade-btn">Upgrade</button>
+      </div>
+    </div>
+    <div class="benefits-card">
+      <div class="benefits-title">Why Upgrade?</div>
+      <div class="benefit">
+        <span>💸</span>
+        <div>
+          <div class="benefit-title">Lower Fees</div>
+          <div class="benefit-description">Save up to 50% on trading fees with premium tiers</div>
+        </div>
+      </div>
+      <div class="benefit">
+        <span>⚡</span>
+        <div>
+          <div class="benefit-title">Higher Limits</div>
+          <div class="benefit-description">Trade up to unlimited amounts with Platinum</div>
+        </div>
+      </div>
+      <div class="benefit">
+        <span>🎧</span>
+        <div>
+          <div class="benefit-title">Priority Support</div>
+          <div class="benefit-description">Get faster response times and dedicated support</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

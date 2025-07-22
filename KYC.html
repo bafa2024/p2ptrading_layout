@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KYC - P2P Crypto Trading</title>
+  <style>
+    :root {
+      --primary: #1E88E5;
+      --primary-dark: #1565C0;
+      --background: #f5f5f5;
+      --card: #fff;
+      --text: #212121;
+      --text-secondary: #757575;
+      --input-bg: #fafbfc;
+      --border: #e0e0e0;
+      --btn-text: #fff;
+      --upload-bg: #fafbfc;
+      --upload-border: #1E88E5;
+    }
+    body.dark-mode {
+      --primary: #90caf9;
+      --primary-dark: #1565C0;
+      --background: #181a20;
+      --card: #23272f;
+      --text: #f5f5f5;
+      --text-secondary: #b0b0b0;
+      --input-bg: #23272f;
+      --border: #333a45;
+      --btn-text: #181a20;
+      --upload-bg: #23272f;
+      --upload-border: #90caf9;
+    }
+    body {
+      background: var(--background);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: background 0.3s;
+    }
+    .mode-toggle {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--card);
+      color: var(--primary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      z-index: 10;
+    }
+    .kyc-container {
+      background: var(--card);
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(30,136,229,0.08);
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    .kyc-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .kyc-progress {
+      width: 100%;
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .kyc-progress-bar {
+      height: 100%;
+      background: var(--primary);
+      width: 33%; /* Step 1/3 */
+      transition: width 0.3s;
+    }
+    .kyc-step {
+      margin-bottom: 1.2rem;
+    }
+    .kyc-label {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .kyc-upload {
+      width: 100%;
+      padding: 1.2rem;
+      border: 2px dashed var(--upload-border);
+      border-radius: 8px;
+      background: var(--upload-bg);
+      color: var(--primary);
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s, border 0.3s;
+    }
+    .kyc-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--primary);
+      color: var(--btn-text);
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 1rem;
+    }
+    .kyc-btn:hover {
+      background: var(--primary-dark);
+    }
+  </style>
+</head>
+<body>
+  <button class="mode-toggle" onclick="toggleMode()">🌙 Dark Mode</button>
+  <div class="kyc-container">
+    <div class="kyc-title">KYC Verification</div>
+    <div class="kyc-progress">
+      <div class="kyc-progress-bar" style="width: 33%"></div>
+    </div>
+    <div class="kyc-step">
+      <label class="kyc-label">Step 1: Upload ID Front</label>
+      <div class="kyc-upload">Click to upload front of ID</div>
+    </div>
+    <div class="kyc-step">
+      <label class="kyc-label">Step 2: Upload ID Back</label>
+      <div class="kyc-upload">Click to upload back of ID</div>
+    </div>
+    <div class="kyc-step">
+      <label class="kyc-label">Step 3: Upload Selfie</label>
+      <div class="kyc-upload">Click to upload selfie</div>
+    </div>
+    <button class="kyc-btn">Submit</button>
+  </div>
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const btn = document.querySelector('.mode-toggle');
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        btn.textContent = '☀️ Light Mode';
+      } else {
+        btn.textContent = '🌙 Dark Mode';
+      }
+    }
+  </script>
+</body>
+</html> 
